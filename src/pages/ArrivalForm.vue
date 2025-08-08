@@ -125,7 +125,7 @@ export default {
     },
     async submitForm() {
       try {
-        const res = await axios.post("http://localhost:3000/api/arrival", this.form);
+        const res = await axios.post("https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrival", this.form);
         console.log("Response:", res.data);
         alert("Data berhasil dikirim");
       } catch (err) {

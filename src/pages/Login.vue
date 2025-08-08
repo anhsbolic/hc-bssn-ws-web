@@ -76,7 +76,7 @@ export default {
   methods: {
     async login() {
       try {
-        const res = await axios.post("http://localhost:3000/api/login", {
+        const res = await axios.post("https://hc-bssn-ws-insecure-api-production.up.railway.app/api/login", {
           username: this.username,
           password: this.password,
         });

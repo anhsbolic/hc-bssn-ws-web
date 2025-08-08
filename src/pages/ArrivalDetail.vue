@@ -40,7 +40,7 @@ export default {
       this.loading = true;
       try {
         const id = this.$route.params.id;
-        const res = await axios.get(`http://localhost:3000/api/arrivals/${id}`);
+        const res = await axios.get(`https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrivals/${id}`);
         console.log("Arrival Detail:", res.data);
 
         this.arrival = res.data.data;
@@ -60,7 +60,7 @@ export default {
     async approveArrival() {
       try {
         const res = await axios.post(
-            `http://localhost:3000/api/arrivals/${this.arrival.id}/approve`,
+            `https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrivals/${this.arrival.id}/approve`,
             {},
             {
               headers: {
@@ -78,7 +78,7 @@ export default {
     async rejectArrival() {
       try {
         const res = await axios.post(
-            `http://localhost:3000/api/arrival/${this.arrival.id}/reject`,
+            `https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrival/${this.arrival.id}/reject`,
             {},
             {
               headers: {

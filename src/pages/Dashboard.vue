@@ -76,7 +76,8 @@
                     :class="statusColor(arrival.status)">{{ arrival.status }}
                 </td>
                 <td class="p-3 border-b">
-                  <router-link :to="`/arrivals/${arrival.id}`" class="text-blue-600 hover:underline">Detail</router-link>
+                  <router-link :to="`/arrivals/${arrival.id}`" class="text-blue-600 hover:underline">Detail
+                  </router-link>
                 </td>
               </tr>
               </tbody>
@@ -133,7 +134,7 @@ export default {
   methods: {
     async fetchArrivals() {
       try {
-        const res = await axios.get("http://localhost:3000/api/arrivals");
+        const res = await axios.get("https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrivals");
         console.log("Arrivals:", res.data);
         this.arrivals = res.data.data;
       } catch (err) {
@@ -157,7 +158,7 @@ export default {
     async approveArrival() {
       try {
         const res = await axios.post(
-            `http://localhost:3000/api/arrivals/${this.selectedArrival.id}/approve`,
+            `https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrivals/${this.selectedArrival.id}/approve`,
             {},
             {
               headers: {
@@ -177,7 +178,7 @@ export default {
     async rejectArrival() {
       try {
         const res = await axios.post(
-            `http://localhost:3000/api/arrivals/${this.selectedArrival.id}/reject`,
+            `https://hc-bssn-ws-insecure-api-production.up.railway.app/api/arrivals/${this.selectedArrival.id}/reject`,
             {},
             {
               headers: {
