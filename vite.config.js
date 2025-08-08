@@ -15,4 +15,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  // add server proxy to handle API requests
+  // this allows you to avoid CORS issues during development
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  }
 })
